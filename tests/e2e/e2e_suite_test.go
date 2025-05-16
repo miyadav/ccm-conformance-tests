@@ -14,6 +14,8 @@ func TestE2E(t *testing.T) {
     ginkgo.RunSpecs(t, "E2E Suite")
 }
 
+var F *framework.Framework
+
 var _ = ginkgo.BeforeSuite(func() {
     framework.SetupFramework()
 })
