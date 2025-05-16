@@ -1,0 +1,7 @@
+# Dependencies
+vendor/
+# Build output
+build/
+go.sum
+/tests/e2e/*.xml
+
