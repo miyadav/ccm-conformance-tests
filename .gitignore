@@ -1,0 +1,5 @@
+# Dependencies
+vendor/
+# Build output
+build/
+go.sum
