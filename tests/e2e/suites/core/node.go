@@ -2,6 +2,7 @@ package core
 
 import (
 	"context"
+
 	"github.com/miyadav/ccm-conformance-tests/tests/e2e/framework"
 	"github.com/onsi/ginkgo/v2"
 	"github.com/onsi/gomega"
@@ -10,9 +11,15 @@ import (
 )
 
 var _ = ginkgo.Describe("CCM Node Management", func() {
+	var f *framework.Framework
+
+	ginkgo.BeforeEach(func() {
+		f = framework.NewDefaultFramework("node")
+	})
+
 	ginkgo.Context("When a new node is present", func() {
 		ginkgo.It("should be registered and have valid addresses", func() {
-			nodes, err := framework.F.ClientSet.CoreV1().Nodes().List(context.TODO(), metav1.ListOptions{})
+			nodes, err := f.ClientSet.CoreV1().Nodes().List(context.TODO(), metav1.ListOptions{})
 			gomega.Expect(err).ToNot(gomega.HaveOccurred())
 			gomega.Expect(nodes.Items).NotTo(gomega.BeEmpty())
 
