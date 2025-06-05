@@ -21,7 +21,6 @@
 
 ```
 ccm-conformance-tests/
-├── cmd/ccm-test/          # Entry point for test binary
 ├── examples/kind/         # Sample kind cluster configuration
 ├── tests/e2e/             # Ginkgo-based test suites
 │   ├── e2e_suite_test.go  # Ginkgo setup
